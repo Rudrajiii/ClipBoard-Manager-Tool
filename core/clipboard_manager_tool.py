@@ -66,16 +66,59 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
             if text not in self.loaded_from_db:
                 self.loaded_from_db.append(text)
                 self.add_clipboard_item(text)
-    def handle_restore_click(self):
     # Show animation
+    def handle_restore_click(self):
+        """Restore all items from the database"""
         self.animation_label.show()
         self.animation_movie.start()
 
         # Hide original button temporarily (optional)
         self.restore_button.setEnabled(False)
+        print("Restoring all items!")
+        db = get_db_connection()
+        if not db:
+            print("Failed to connect to database")
+            return
+        # always clear all items before restoring
+        self.clear_all_items()
+        # Delay to allow animation to show
+        QtCore.QTimer.singleShot(1000, self.stop_restore_animation)
+        # Remove placeholder if it exists
+        if hasattr(self, 'placeholder_label') and self.placeholder_label is not None:
+            try:
+                print("Removing placeholder")  # Debug log
+                self.content_layout.removeWidget(self.placeholder_label)
+                self.placeholder_label.deleteLater()
+                self.placeholder_label = None
+            except:
+                pass  # Placeholder might already be removed
+        today_date = datetime.now().strftime("%Y-%m-%d")
+        query = QSqlQuery()
+        query.exec_(SQL_QUERY_FOR_LOAD_HISTORIES(today_date))
+
+        
+
+        while query.next():
+            text = query.value(0)
+            # Create new elided label
+            self.clipboard_items.append(text)
+            label = ElidedLabel(self.content_widget)
+            label.setOriginalText(text)
+            label.setMaxLines(3)
+            label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+            label.setWordWrap(True)
+            label.setCursor(Qt.PointingHandCursor)
+            label.setStyleSheet(DATA_TEXT_FIELD_STYLE)
+            label.setObjectName("dynamic_text_label")
+            label.setMinimumHeight(40)
+            print("Restoring labels to layout")  # Debug log
+            self.content_layout.insertWidget(0, label)
+            # Force layout updates
+            self.content_widget.updateGeometry()
+            self.scroll_area.updateGeometry()
+            self.update()
 
         # Stop animation after 1 seconds and restore button
-        QtCore.QTimer.singleShot(1000, self.stop_restore_animation)
     
     def stop_restore_animation(self):
         self.animation_label.hide()
@@ -161,8 +204,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         self.content_widget.update()
         self.scroll_area.update()
         print("All items cleared, placeholder restored")
-
-
+        
     @pyqtSlot()
     def on_clipboard_changed(self):
         """Triggered when clipboard content changes"""
