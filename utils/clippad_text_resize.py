@@ -1,5 +1,6 @@
-from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtWidgets import QApplication
+from PyQt5 import QtWidgets, QtCore, QtGui # type: ignore
+from PyQt5.QtWidgets import QApplication # type: ignore
+from stylesheets.animation_style import *  
 
 class ElidedLabel(QtWidgets.QLabel):
     def __init__(self, *args, **kwargs):
@@ -12,10 +13,6 @@ class ElidedLabel(QtWidgets.QLabel):
         self._max_lines = 3  # Show up to 3 lines
         self.setStyleSheet("padding: 5px;")
         self.setCursor(QtCore.Qt.PointingHandCursor)  # Optional: Set cursor on init
-        self.default_bg = "rgb(30, 30, 30)"
-        self.highlighted_border = "rgb(33, 193, 116)"  # Greenish highlight
-        self.normal_border = "1px solid rgb(75, 75, 75)"
-        self.highlight_border = "1px solid white"
 
     def setOriginalText(self, text):
         self._original_text = text
@@ -84,31 +81,11 @@ class ElidedLabel(QtWidgets.QLabel):
         super().mousePressEvent(event)
     
     def animate_copy_feedback(self):
-        # Change background and border to indicate success
-        self.setStyleSheet(f"""
-            QLabel {{
-                border: 1px solid {self.highlighted_border};
-                border-radius: 8px;
-                padding: 5px;
-                font: 11pt "MS Shell Dlg 2";
-                color: rgb(255, 255, 255);
-            }}
-        """)
+        # Change border color to green indicate success
+        self.setStyleSheet(ANIMATE_COPY_FEEDBACK)
 
         # Revert back after 1 second
         QtCore.QTimer.singleShot(1000, self.revert_style)
     
     def revert_style(self):
-        self.setStyleSheet(f"""
-            QLabel {{
-                font: 11pt "MS Shell Dlg 2";
-                color: rgb(255, 255, 255);
-                background-color: {self.default_bg};
-                border: {self.normal_border};
-                border-radius: 8px;
-                padding: 5px;
-            }}
-            QLabel:hover {{
-                border: {self.highlight_border};
-            }}
-        """)
+        self.setStyleSheet(REVERT_STYLE)

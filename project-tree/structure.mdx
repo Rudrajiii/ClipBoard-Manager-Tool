@@ -1,11 +1,11 @@
-clipboard_manager/
-├── main.py              # Entry point, initializes PyQt5 window
-├── clipboard_manager.py # Listens to clipboard events
-├── database.py          # SQLite logic for storing entries
+project_root/
+├── clipboard_manager.py   ← This file
+├── main.py                ← Launcher
 ├── ui/
-│   └── main_window.ui   # QtDesigner layout (optional)
-├── models.py            # Data models: Snippet, Type, etc.
-├── config.py            # App settings and user preferences
-├── utils.py             # Time format, mime type helpers
-├── assets/              # App icons, themes
-└── requirements.txt
+│   └── clipboard_manager.py   ← UI class
+├── utils/
+│   └── clippad_text_resize.py ← ElidedLabel class
+├── Db/
+│   ├── database.py
+│   └── models.py
+└── clipboard_history.db   ← Auto-created SQLite file

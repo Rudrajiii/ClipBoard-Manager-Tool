@@ -1,15 +1,21 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from utils.clippad_text_resize import ElidedLabel 
-from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import Qt
+from PyQt5 import QtCore, QtGui, QtWidgets # type: ignore
+from utils.clippad_text_resize import ElidedLabel # type: ignore
+from PyQt5.QtGui import QIcon # type: ignore
+from PyQt5.QtCore import Qt # type: ignore
+
+# Local imports
+from stylesheets.main_window_style import *
+from stylesheets.button_styles import *
+from stylesheets.label_text_style import *
+from stylesheets.main_body_style import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         # MainWindow.resize(476, 551)
         MainWindow.setFixedSize(QtCore.QSize(476, 551))
-        self.icon_path = "assets/recycle.png"  # Path to your icon file
-        MainWindow.setStyleSheet("background-color: rgb(26, 26, 26);")
+        self.icon_path = "assets/restore_gif.gif"  # Path to your icon file
+        MainWindow.setStyleSheet(MAIN_WINDOW_STYLE)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.header_name = QtWidgets.QLabel(self.centralwidget)
@@ -17,22 +23,30 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.header_name.setFont(font)
-        self.header_name.setStyleSheet("color: rgb(248, 248, 248);")
+        self.header_name.setStyleSheet(HEADER_NAME_STYLE)
         self.header_name.setObjectName("header_name")
 
 
+        # Create restore button
         self.restore_button = QtWidgets.QPushButton(self.centralwidget)
         self.restore_button.setGeometry(QtCore.QRect(230, 12, 40, 40))  # Positioned before history_button
         self.restore_button.setIcon(QIcon(self.icon_path))  # Make sure your icon is already white
         self.restore_button.setIconSize(QtCore.QSize(40, 40))
         self.restore_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.restore_button.setStyleSheet("""
-        QPushButton {
-                background-color: transparent;
-        }
-        """)
+        self.restore_button.setStyleSheet(RESTORE_BUTTON_STYLE)
         self.restore_button.setText("")  # No text
         self.restore_button.setObjectName("restore_button")
+
+        # Create animation label (for GIF)
+        self.animation_label = QtWidgets.QLabel(self.centralwidget)
+        self.animation_movie = QtGui.QMovie("assets/restore_gif.gif")
+        self.animation_label.setMovie(self.animation_movie)
+        self.animation_label.resize(40, 40)
+        self.animation_label.setStyleSheet(ANIMATION_LABEL_STYLE)  # Make it transparent
+        self.animation_label.move(238, 12)  # Same position as restore_button
+        self.animation_label.hide()
+
+        
 
         self.clearall_button = QtWidgets.QPushButton(self.centralwidget)
         self.clearall_button.setGeometry(QtCore.QRect(380, 10, 91, 41))
@@ -40,23 +54,7 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.clearall_button.setFont(font)
         self.clearall_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.clearall_button.setStyleSheet("""
-                QPushButton {
-                        color: rgb(248, 248, 248);
-                        background-color: rgb(41, 41, 41);
-                        border: 0.6px solid rgb(231, 231, 231);
-                        border-radius: 8px;
-                }
-                QPushButton:hover {
-                        border: 1px solid white;
-                        background-color: rgb(60, 60, 60);  /* optional: slightly lighter */
-                }
-                QPushButton:pressed {
-                        background-color: rgb(30, 30, 30);  /* darker shade on press */
-                        padding-left: 1px;
-                        padding-top: 1px;
-                }
-                """)
+        self.clearall_button.setStyleSheet(CLEARALL_BUTTON_STYLE)
 
         self.clearall_button.setObjectName("clearall_button")
         self.history_button = QtWidgets.QPushButton(self.centralwidget)
@@ -66,23 +64,7 @@ class Ui_MainWindow(object):
         self.history_button.setFont(font)
         self.history_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.history_button.setStyleSheet(
-            """
-                QPushButton {
-                        color: rgb(248, 248, 248);
-                        background-color: rgb(41, 41, 41);
-                        border: 0.6px solid rgb(231, 231, 231);
-                        border-radius: 8px;
-                }
-                QPushButton:hover {
-                        border: 1px solid white;
-                        background-color: rgb(60, 60, 60);  /* optional: slightly lighter */
-                }
-                QPushButton:pressed {
-                        background-color: rgb(30, 30, 30);  /* darker shade on press */
-                        padding-left: 1px;
-                        padding-top: 1px;
-                }
-                """
+            HISTORY_BUTTON_STYLE
         )
         self.history_button.setObjectName("history_button")
 
@@ -91,49 +73,22 @@ class Ui_MainWindow(object):
         self.line_seperator.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_seperator.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_seperator.setObjectName("line_seperator")
-        self.line_seperator.setStyleSheet("background-color: rgb(161, 160, 160); max-height: 1px;")
+        self.line_seperator.setStyleSheet(LINE_SEPARATOR_STYLE)
 
         # Scroll Area for Dynamic Labels
         self.scroll_area = QtWidgets.QScrollArea(self.centralwidget)
         self.scroll_area.setGeometry(QtCore.QRect(10, 80, 461, 450))  # Increased height
         self.scroll_area.setWidgetResizable(True)
-        self.scroll_area.setStyleSheet("""
-        QScrollArea {
-                border: none;
-                background-color: rgb(26, 26, 26);
-        }
-        """)
+        self.scroll_area.setStyleSheet(SCROLL_AREA_STYLE)
         self.scroll_area.setObjectName("scroll_area")
 
         # ✅ Apply style directly to the vertical scroll bar
-        self.scroll_area.verticalScrollBar().setStyleSheet("""
-        QScrollBar:vertical {
-                background-color: rgb(41, 41, 41);
-                width: 12px;
-                border-radius: 6px;
-                margin: 0px 0px 0px 0px;
-                padding: 2px;
-        }
-        QScrollBar::handle:vertical {
-                background-color: rgb(75, 75, 75);
-                border-radius: 6px;
-                min-height: 20px;
-        }
-        QScrollBar::handle:vertical:hover {
-                background-color: rgb(100, 100, 100);
-        }
-        QScrollBar::add-line:vertical,
-        QScrollBar::sub-line:vertical {
-                background: none;
-                border: none;
-                height: 0px;
-        }
-        """)
+        self.scroll_area.verticalScrollBar().setStyleSheet(SCROLL_BAR_STYLE)
 
 
         # Content Widget inside Scroll Area
         self.content_widget = QtWidgets.QWidget()
-        self.content_widget.setStyleSheet("background-color: rgb(26, 26, 26);")
+        self.content_widget.setStyleSheet(CONTENT_WIDGET_STYLE)
         
         # Changed from AlignCenter to AlignTop for proper alignment
         self.content_layout = QtWidgets.QVBoxLayout(self.content_widget)
@@ -153,14 +108,7 @@ class Ui_MainWindow(object):
         self.placeholder_label.setWordWrap(True)
         self.placeholder_label.setObjectName("placeholder_label")
         self.placeholder_label.setStyleSheet(
-                """
-                QLabel {
-                        font: 11pt "MS Shell Dlg 2";
-                        color: rgb(150, 150, 150);
-                        background-color: transparent;
-                        padding: 20px;
-                }
-                """
+                PLACEHOLDER_LABEL_STYLE
         )
         self.content_layout.addItem(spacer_top)
         self.content_layout.addWidget(self.placeholder_label)
