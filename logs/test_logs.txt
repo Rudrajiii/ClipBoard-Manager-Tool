@@ -1,0 +1,62 @@
+Operation DELETE
+Triggered at: 2025-05-25 12:43:05.039558
+Status : SUCCESS - 16 ROWS DELETED 
+--------------------------------------------------
+
+Operation DELETE
+Triggered at: 2025-05-25 12:53:51.480031
+Status : SUCCESS - 5 ROWS DELETED 
+--------------------------------------------------
+
+Operation DELETE
+Triggered at: 2025-05-25 13:31:03.076817
+Status : SUCCESS - 8 ROWS DELETED 
+--------------------------------------------------
+
+Operation DELETE
+Triggered at: 2025-05-25 13:38:38.536905
+Status : SUCCESS - 5 ROWS DELETED 
+--------------------------------------------------
+
+Operation DELETE
+Triggered at: 2025-05-27 14:40:39.179366
+Status : SUCCESS - 9 ROWS DELETED 
+--------------------------------------------------
+
+Operation: DELETE
+Triggered at: 2025-05-27 15:23:10.718183
+Status: SUCCESS - 1 ROWS DELETED
+--------------------------------------------------
+
+Operation: DELETE
+Triggered at: 2025-05-27 15:24:03.761752
+Status: SUCCESS - NO ENTRIES
+--------------------------------------------------
+
+
+
+Operation: DELETE
+Triggered at: 2025-05-27 15:29:23.374514
+Status: SUCCESS - NO ENTRIES
+--------------------------------------------------
+
+Operation: DELETE
+Triggered at: 2025-05-27 16:11:50.953684
+Status: SUCCESS - 1 ROWS DELETED
+--------------------------------------------------
+
+Operation: DELETE
+Triggered at: 2025-05-27 17:01:46.235396
+Status: SUCCESS - 10 ROWS DELETED
+--------------------------------------------------
+
+Operation: DELETE
+Triggered at: 2025-05-27 17:03:17.345161
+Status: SUCCESS - 1 ROWS DELETED
+--------------------------------------------------
+
+Operation: DELETE
+Triggered at: 2025-05-27 18:03:04.817273
+Status: SUCCESS - 28 ROWS DELETED
+--------------------------------------------------
+

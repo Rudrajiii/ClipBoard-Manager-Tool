@@ -1,0 +1,1 @@
+[1] BUG : Fixed (a new horizontal box is created to insert that whole navigation component in History section)

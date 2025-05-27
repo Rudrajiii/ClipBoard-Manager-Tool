@@ -1,0 +1,16 @@
+[1] the prev & next buttons from monthly navigation is appearing in the main window in startup.
+[2] getting an error when click History Button for the second time
+    [History] -> [Back] -> [History] -> [Back]
+             (S1)      (S2)         (S3)
+          [NO ERROR]  [NO ERROR]  [ERROR_CODE 100]
+
+    ERROR_CODE 100 : {
+        "error" :   """
+        File "C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\core\clipboard_manager_tool.py", line 253, in load_alltime_history
+        self.update_month_label()
+        File "C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\core\clipboard_manager_tool.py", line 151, in update_month_label
+        self.month_label.setText(f"{month_str} {self.current_year}")
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        AttributeError: 'NoneType' object has no attribute 'setText'
+                    """
+                    }
