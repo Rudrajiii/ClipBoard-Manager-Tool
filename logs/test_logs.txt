@@ -33,8 +33,6 @@ Triggered at: 2025-05-27 15:24:03.761752
 Status: SUCCESS - NO ENTRIES
 --------------------------------------------------
 
-
-
 Operation: DELETE
 Triggered at: 2025-05-27 15:29:23.374514
 Status: SUCCESS - NO ENTRIES
@@ -58,5 +56,15 @@ Status: SUCCESS - 1 ROWS DELETED
 Operation: DELETE
 Triggered at: 2025-05-27 18:03:04.817273
 Status: SUCCESS - 28 ROWS DELETED
+--------------------------------------------------
+
+Operation: DELETE
+Triggered at: 2025-05-28 18:24:31.838118
+Status: SUCCESS - 1 ROWS DELETED
+--------------------------------------------------
+
+Operation: DELETE
+Triggered at: 2025-05-28 19:04:28.125271
+Status: SUCCESS - 4 ROWS DELETED
 --------------------------------------------------
 

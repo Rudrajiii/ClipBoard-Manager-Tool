@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QApplication # type: ignore
 from stylesheets.animation_style import *  
 
 class ElidedLabel(QtWidgets.QLabel):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, manager=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setTextFormat(QtCore.Qt.PlainText)
         self.setWordWrap(True)
@@ -13,6 +13,7 @@ class ElidedLabel(QtWidgets.QLabel):
         self._max_lines = 3  # Show up to 3 lines
         self.setStyleSheet("padding: 5px;")
         self.setCursor(QtCore.Qt.PointingHandCursor)  # Optional: Set cursor on init
+        self.manager = manager
 
     def setOriginalText(self, text):
         self._original_text = text
@@ -74,10 +75,19 @@ class ElidedLabel(QtWidgets.QLabel):
     def mousePressEvent(self, event):
         if event.button() == QtCore.Qt.LeftButton and self._original_text:
             clipboard = QApplication.clipboard()
-            clipboard.setText(self._original_text)
-            print(f"Copied to clipboard: {self._original_text}")
-            # Trigger visual feedback
+
+            if self.manager and self.manager.is_history_button_clicked:
+                # Only copy to clipboard without triggering new save
+                clipboard.blockSignals(True)  # Prevent triggering on_clipboard_changed
+                clipboard.setText(self._original_text)
+                clipboard.blockSignals(False)
+                print(f"[History Mode] Copied: {self._original_text}")
+            else:
+                clipboard.setText(self._original_text)
+                print(f"[Normal Mode] Copied: {self._original_text}")
+
             self.animate_copy_feedback()
+        
         super().mousePressEvent(event)
     
     def animate_copy_feedback(self):

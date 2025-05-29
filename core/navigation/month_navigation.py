@@ -105,6 +105,7 @@ class MonthNavigator:
         return self.calendar_widget
 
     def load_history_for_date(self, day):
+        print("this is indeed for testing purposes" , self.parent.is_history_button_clicked)
         target_date = f"{self.current_year}-{self.current_month:02d}-{day:02d}"
         print(f"Loading history for {target_date}")
 
@@ -189,7 +190,7 @@ class MonthNavigator:
             self.parent.current_view_items.append(text)
             
             # Add item to UI
-            label = ElidedLabel(self.parent.clipboard_container)
+            label = ElidedLabel(manager=self.parent, parent=self.parent.clipboard_container)
             label.setOriginalText(text)
             label.setMaxLines(3)
             label.setAlignment(Qt.AlignLeft | Qt.AlignTop)

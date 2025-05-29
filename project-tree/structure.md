@@ -1,3 +1,4 @@
+```text
 project_root/
 ├── clipboard_manager.py   ← This file
 ├── main.py                ← Launcher
@@ -9,3 +10,4 @@ project_root/
 │   ├── database.py
 │   └── models.py
 └── clipboard_history.db   ← Auto-created SQLite file
+```

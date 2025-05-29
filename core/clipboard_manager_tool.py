@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow # type: ignore
 from PyQt5.QtCore import pyqtSlot, Qt, QDate # type: ignore
-from PyQt5.QtGui import QClipboard # type: ignore
+from PyQt5.QtGui import QClipboard , QIcon # type: ignore
 from PyQt5 import QtWidgets , QtCore # type: ignore
 from PyQt5.QtSql import QSqlQuery # type: ignore
 
@@ -9,6 +9,7 @@ from PyQt5.QtSql import QSqlQuery # type: ignore
 from utils.clippad_text_resize import ElidedLabel
 from datetime import datetime , date
 import calendar
+import os
 
 #? Ui imports
 from ui.clipboard_manager import Ui_MainWindow
@@ -30,6 +31,15 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        # Set window icon
+        icon_path = os.path.join(os.path.dirname(__file__),"..", "assets", "clipboard_manager_icon.ico")
+        self.setWindowIcon(QIcon(icon_path))
+        
+        try:
+            import ctypes
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('my.clipboard.manager.1')
+        except:
+            pass
         self.no_history_label = None
 
         #? DB initialization
@@ -281,7 +291,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
             self.content_layout.insertWidget(0, self.clipboard_container)
 
         # Create new elided label
-        label = ElidedLabel(self.clipboard_container)
+        label = ElidedLabel(manager=self,parent=self.clipboard_container)
         label.setOriginalText(text)
         label.setMaxLines(3)
         label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
@@ -370,7 +380,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
             text = query.value(0)
             # Create new elided label
             self.clipboard_items.append(text)
-            label = ElidedLabel(self.content_widget)
+            label = ElidedLabel(manager=self,parent=self.content_widget)
             label.setOriginalText(text)
             label.setMaxLines(3)
             label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
@@ -494,12 +504,15 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
     def on_clipboard_changed(self):
         """Triggered when clipboard content changes"""
         print("Clipboard changed!")  # Debug log
+        if self.is_history_button_clicked:
+            # Prevent saving clipboard changes while browsing history
+            return
         mime_data = self.clipboard.mimeData()
         
         if mime_data.hasText():
             text = mime_data.text().strip()
             if text and text not in self.clipboard_items:  # Avoid duplicates
-                print(f"New clipboard text: {text}")  # Debug log
+                print(f"New selection text: {text}")  # Debug log
                 self.add_clipboard_item(text)
 
     @pyqtSlot()
@@ -533,7 +546,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
                 pass  # Placeholder might already be removed
         
         # Create new elided label
-        label = ElidedLabel(self.content_widget)
+        label = ElidedLabel(manager=self,parent=self.content_widget)
         label.setOriginalText(text)
         label.setMaxLines(3)
         label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
