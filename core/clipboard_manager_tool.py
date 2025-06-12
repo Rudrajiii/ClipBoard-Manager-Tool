@@ -1,15 +1,15 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow # type: ignore
+from PyQt5.QtWidgets import QApplication, QMainWindow,QSystemTrayIcon, QMenu, QAction # type: ignore
 from PyQt5.QtCore import pyqtSlot, Qt, QDate # type: ignore
-from PyQt5.QtGui import QClipboard , QIcon # type: ignore
+from PyQt5.QtGui import QClipboard , QIcon , QKeySequence # type: ignore
 from PyQt5 import QtWidgets , QtCore # type: ignore
 from PyQt5.QtSql import QSqlQuery # type: ignore
 
-
 #? Utility imports
 from utils.clippad_text_resize import ElidedLabel
-from datetime import datetime , date
-import calendar
+from datetime import datetime 
 import os
+import ctypes
+import sys
 
 #? Ui imports
 from ui.clipboard_manager import Ui_MainWindow
@@ -26,25 +26,88 @@ from Db.sql_queries.sql_command_for_load_alltime_histories import *
 
 
 from core.navigation.month_navigation import MonthNavigator
+import logging
+from logging.handlers import RotatingFileHandler
+
+def setup_logging():
+    try:
+        # Get the application's base directory (works in both script and frozen app)
+        if getattr(sys, 'frozen', False):
+            # If the application is frozen (compiled with PyInstaller)
+            base_dir = os.path.dirname(sys.executable)
+        else:
+            # If running as a normal Python script
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        
+        # Create logs directory
+        logs_dir = os.path.join(base_dir, "sys-logs")
+        if not os.path.exists(logs_dir):
+            os.makedirs(logs_dir)
+        
+        # Log file path with date
+        today = datetime.now().strftime("%Y-%m-%d")
+        log_file = os.path.join(logs_dir, f"clipboard-manager-{today}.log")
+        
+        # Configure logger
+        logger = logging.getLogger('clipboard_manager')
+        logger.setLevel(logging.DEBUG)
+        
+        # Clear any existing handlers (avoid duplicate logs)
+        if logger.hasHandlers():
+            logger.handlers.clear()
+        
+        # Create file handler with rotation
+        file_handler = RotatingFileHandler(log_file, maxBytes=5*1024*1024, backupCount=3)
+        file_handler.setLevel(logging.DEBUG)
+        
+        # Create console handler
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.DEBUG)
+        
+        # Create formatter and add it to handlers
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        file_handler.setFormatter(formatter)
+        console_handler.setFormatter(formatter)
+        
+        # Add handlers to logger
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
+        
+        # Log the paths to help debug
+        logger.info(f"Application directory: {base_dir}")
+        logger.info(f"Log file location: {log_file}")
+        
+        return logger
+    except Exception as e:
+        # If there's an error with logging setup, create a simple fallback
+        print(f"Error setting up logging: {e}")
+        fallback_logger = logging.getLogger('clipboard_manager_fallback')
+        fallback_logger.addHandler(logging.StreamHandler())
+        fallback_logger.setLevel(logging.DEBUG)
+        fallback_logger.error(f"Failed to set up file logging: {e}")
+        return fallback_logger
+
+# Create logger instance
+logger = setup_logging()
 
 class ClipboardManager(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         # Set window icon
-        icon_path = os.path.join(os.path.dirname(__file__),"..", "assets", "clipboard_manager_icon.ico")
+        icon_path = self.resource_path("assets/icon.ico")
         self.setWindowIcon(QIcon(icon_path))
-        
+        logger.info("Initializing ClipboardManager")
         try:
-            import ctypes
             ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('my.clipboard.manager.1')
-        except:
-            pass
+        except Exception as e:
+            logger.error(f"Failed to set AppUserModelID: {e}")
         self.no_history_label = None
+
 
         #? DB initialization
         if not init_db():
-            print("Failed to initialize database")
+            logger.error("Failed to initialize database")
 
         # In __init__
         self.current_view_items = []  # To track items currently displayed
@@ -57,8 +120,9 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         self.is_history_button_clicked = False
 
         #? Set proper window flags
-        self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.WindowTitleHint | QtCore.Qt.WindowCloseButtonHint)
-
+        self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.WindowTitleHint |
+                            QtCore.Qt.WindowMinimizeButtonHint | 
+                            QtCore.Qt.WindowCloseButtonHint)
         #? Keep window always on top
         self.setWindowFlag(QtCore.Qt.WindowStaysOnTopHint, True)
 
@@ -75,7 +139,8 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         #? For items already in DB     
         self.loaded_from_db = []     
 
-        self.load_clipboard_history()
+        self.load_clipboard_history() #* Load today's history on *startup*
+        print(f"Loaded {len(self.loaded_from_db)} items from DB")  # Debug log
         self.clearall_button.installEventFilter(self)
         self.restore_button.installEventFilter(self)
         #? Implementation the logic of clearing all items
@@ -84,32 +149,26 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         self.restore_button.clicked.connect(self.handle_restore_click)
         #? History Button connection for loading all-time history
         self.history_button.clicked.connect(self.load_alltime_history)
-        
-    def eventFilter(self, obj, event):
-        if obj in [self.clearall_button, self.restore_button]:
-            if event.type() == QtCore.QEvent.Enter:
-                if not obj.isEnabled():
-                    QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.ForbiddenCursor)
-                else:
-                    QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.PointingHandCursor)
-            elif event.type() == QtCore.QEvent.Leave:
-                QtWidgets.QApplication.restoreOverrideCursor()
-        return super().eventFilter(obj, event)
 
+    def resource_path(self,relative_path):
+        """ Get absolute path to resource, works for dev and for PyInstaller """
+        try:
+            # PyInstaller creates a temp folder and stores path in _MEIPASS
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
 
-    def closeEvent(self, event):
-        QtWidgets.QApplication.restoreOverrideCursor()
-        event.accept()
+        return os.path.join(base_path, relative_path)
 
     def load_alltime_history(self):
         layout = self.content_layout
         db = get_db_connection()
         if not db:
-            print("Failed to connect to database")
+            logger.error("Failed to connect to database")
             return
 
         if not self.is_history_button_clicked:
-            print("btn changed to back....")
+            logger.info("btn changed to back....")
             self.clearall_button.setEnabled(False)
             self.restore_button.setEnabled(False)
             
@@ -130,7 +189,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
                     self.placeholder_label.deleteLater()
                     self.placeholder_label = None
                 except Exception as e:
-                    print("Error removing placeholder:", e)
+                    logger.error("Error removing placeholder:", e)
 
             # Setup month/year from current date
             current_date = QtCore.QDate.currentDate()
@@ -210,7 +269,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
             self.history_button.setText("Back")
 
         else:
-            print("btn changed to history....")
+            logger.info("btn changed to history....")
             self.clearall_button.setEnabled(True)
             self.restore_button.setEnabled(True)
             
@@ -331,12 +390,11 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         else:
             self.no_history_label.setText(message)
 
-
     def load_clipboard_history(self):
         """Load clipboard history from database and display"""
         db = get_db_connection()
         if not db:
-            print("Failed to connect to database")
+            logger.error("Failed to connect to database")
             return
 
         today_date = datetime.now().strftime("%Y-%m-%d")
@@ -349,7 +407,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
             if text not in self.loaded_from_db:
                 self.loaded_from_db.append(text)
                 self.add_clipboard_item(text)
-        
+
     # Show animation
     def handle_restore_click(self):
         """Restore all items from the database"""
@@ -359,10 +417,10 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
 
         # Hide original button temporarily (optional)
         self.restore_button.setEnabled(False)
-        print("Restoring all items!")
+        logger.info("Restoring all items!")
         db = get_db_connection()
         if not db:
-            print("Failed to connect to database")
+            logger.error("Failed to connect to database")
             return
         # always clear all items before restoring
         self.clear_all_items()
@@ -389,17 +447,17 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
             label.setStyleSheet(DATA_TEXT_FIELD_STYLE)
             label.setObjectName("dynamic_text_label")
             label.setMinimumHeight(40)
-            print("Restoring labels to layout")  # Debug log
+            logger.info("Restoring labels to layout")  # Debug log
             self.content_layout.insertWidget(0, label)
             # Force layout updates
             self.content_widget.updateGeometry()
             self.scroll_area.updateGeometry()
             self.update()
         if not has_data:
-            print("DATA IS YET TO BE ENTRIED")
+            logger.info("DATA IS YET TO BE ENTRIED")
         elif hasattr(self, 'placeholder_label') and self.placeholder_label is not None:
             try:
-                print("Removing placeholder")  # Debug log
+                logger.info("Removing placeholder")  # Debug log
                 self.content_layout.removeWidget(self.placeholder_label)
                 self.placeholder_label.deleteLater()
                 self.placeholder_label = None
@@ -423,7 +481,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
 
     def clear_all_items(self):
         """Clear all clipboard items but keep the placeholder"""
-        print("Clearing all items!")
+        logger.info("Clearing all items!")
 
         layout = self.content_layout
         
@@ -436,7 +494,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         
         # If no clipboard items exist, don't do anything
         if not has_clipboard_items and len(self.clipboard_items) == 0:
-            print("No items to clear, placeholder already visible")
+            logger.info("No items to clear, placeholder already visible")
             return
         
         # Remove all widgets except the placeholder and spacers
@@ -446,7 +504,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
                 widget = item.widget()
                 # Only remove widgets that are NOT the placeholder
                 if widget != self.placeholder_label:
-                    print(f"Removing widget: {widget.objectName()}")
+                    logger.info(f"Removing widget: {widget.objectName()}")
                     layout.removeWidget(widget)
                     widget.deleteLater()
             elif item.spacerItem():
@@ -498,37 +556,35 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         # Force update
         self.content_widget.update()
         self.scroll_area.update()
-        print("All items cleared, placeholder restored")
-        
+        logger.info("All items cleared, placeholder restored")
+
     @pyqtSlot()
     def on_clipboard_changed(self):
-        """Triggered when clipboard content changes"""
-        print("Clipboard changed!")  # Debug log
         if self.is_history_button_clicked:
-            # Prevent saving clipboard changes while browsing history
-            return
+            return  # Prevent saving while browsing history
+
         mime_data = self.clipboard.mimeData()
-        
         if mime_data.hasText():
             text = mime_data.text().strip()
-            if text and text not in self.clipboard_items:  # Avoid duplicates
-                print(f"New selection text: {text}")  # Debug log
-                self.add_clipboard_item(text)
+            if text and text not in self.loaded_from_db and text not in self.clipboard_items:
+                self.clipboard_items.append(text)
+                self.save_to_database(text)  # Saves to DB
+                self.add_clipboard_item(text)  # NEW: Adds to UI
 
     @pyqtSlot()
     def on_selection_changed(self):
         """Triggered when primary selection changes"""
-        print("Primary selection changed!")  # Debug log
+        logger.info("Primary selection changed!")  # Debug log
         mime_data = self.clipboard.mimeData(QClipboard.Selection)
         
         if mime_data.hasText():
             text = mime_data.text().strip()
             if text and text not in self.clipboard_items:  # Avoid duplicates
-                print(f"New selection text: {text}")  # Debug log
+                logger.info(f"New selection text: {text}")  # Debug log
                 self.add_clipboard_item(text)
 
     def add_clipboard_item(self, text):
-        print(f"Adding clipboard item: {text}")  # Debug log
+        # print(f"Adding clipboard item: {text}")  # Debug log
         
         # Add to our tracking list
         self.clipboard_items.append(text)
@@ -538,7 +594,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         # Remove placeholder if it exists
         if hasattr(self, 'placeholder_label') and self.placeholder_label is not None:
             try:
-                print("Removing placeholder")  # Debug log
+                logger.info("Removing placeholder")  # Debug log
                 self.content_layout.removeWidget(self.placeholder_label)
                 self.placeholder_label.deleteLater()
                 self.placeholder_label = None
@@ -560,7 +616,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         # Save to database
         
         # Add to layout at the top (most recent first)
-        print("Adding label to layout")  # Debug log
+        logger.info("Adding label to layout")  # Debug log
         self.content_layout.insertWidget(0, label)
         self.save_to_database(text)
         
@@ -570,6 +626,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         self.update()
         
         print(f"Layout now has {self.content_layout.count()} items")  # Debug log
+
     def save_to_database(self, text):
         db = get_db_connection()
         if not db:
@@ -586,7 +643,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         query.next()
 
         if query.value(0) > 0:
-            print("Text already exists in DB for today")
+            logger.info("Text already exists in DB for today")
             return
 
         # Insert if not duplicate
@@ -596,13 +653,16 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         insert_query.bindValue(":date", today_date)
 
         if not insert_query.exec_():
-            print("Error saving to database:", insert_query.lastError().text())
+            logger.error("Error saving to database:", insert_query.lastError().text())
         else:
-            print(f"Saved to DB: {text[:30]}...")
+            logger.info(f"Saved to DB: {text[:30]}...")
 
 if __name__ == "__main__":
-    import sys
-    app = QApplication(sys.argv)
-    window = ClipboardManager()
-    window.show()
-    sys.exit(app.exec_())
+    try:
+        app = QApplication(sys.argv)
+        window = ClipboardManager()
+        window.show()
+        sys.exit(app.exec_())
+    except Exception as e:
+        logger.error(f"An error occurred: {e}")
+        sys.exit(1)

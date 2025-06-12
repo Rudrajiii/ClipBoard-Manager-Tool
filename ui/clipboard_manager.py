@@ -8,13 +8,21 @@ from stylesheets.main_window_style import *
 from stylesheets.button_styles import *
 from stylesheets.label_text_style import *
 from stylesheets.main_body_style import *
+import os
+import sys
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         # MainWindow.resize(476, 551)
-        MainWindow.setFixedSize(QtCore.QSize(476, 551))
-        self.icon_path = "assets/restore_gif.gif"  # Path to your icon file
+        MainWindow.resize(476, 552)
+        
+        # Instead of fixed size, use minimum size
+        MainWindow.setMinimumSize(QtCore.QSize(476, 552))
+        
+        # Optional: Set maximum size to same value to mimic fixed size
+        MainWindow.setMaximumSize(QtCore.QSize(476, 552))
+        icon_path = self.resource_path("assets/restore_gif.gif")  # Path to your icon file
         MainWindow.setStyleSheet(MAIN_WINDOW_STYLE)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -30,7 +38,7 @@ class Ui_MainWindow(object):
         # Create restore button
         self.restore_button = QtWidgets.QPushButton(self.centralwidget)
         self.restore_button.setGeometry(QtCore.QRect(230, 12, 40, 40))  # Positioned before history_button
-        self.restore_button.setIcon(QIcon(self.icon_path))  # Make sure your icon is already white
+        self.restore_button.setIcon(QIcon(icon_path))  # Make sure your icon is already white
         self.restore_button.setIconSize(QtCore.QSize(40, 40))
         self.restore_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.restore_button.setStyleSheet(RESTORE_BUTTON_STYLE)
@@ -39,7 +47,7 @@ class Ui_MainWindow(object):
 
         # Create animation label (for GIF)
         self.animation_label = QtWidgets.QLabel(self.centralwidget)
-        self.animation_movie = QtGui.QMovie("assets/restore_gif.gif")
+        self.animation_movie = QtGui.QMovie(icon_path)
         self.animation_label.setMovie(self.animation_movie)
         self.animation_label.resize(40, 40)
         self.animation_label.setStyleSheet(ANIMATION_LABEL_STYLE)  # Make it transparent
@@ -131,6 +139,17 @@ class Ui_MainWindow(object):
         self.header_name.setText(_translate("MainWindow", "Clipboard Data"))
         self.clearall_button.setText(_translate("MainWindow", "Clear All"))
         self.history_button.setText(_translate("MainWindow", "History"))
+    
+
+    def resource_path(self,relative_path):
+        """ Get absolute path to resource, works for dev and for PyInstaller """
+        try:
+            # PyInstaller creates a temp folder and stores path in _MEIPASS
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+
+        return os.path.join(base_path, relative_path)
 
 if __name__ == "__main__":
     import sys
