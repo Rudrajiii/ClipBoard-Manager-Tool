@@ -118,14 +118,8 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         
         self.history_heading = None
         self.is_history_button_clicked = False
-
-        #? Set proper window flags
-        self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.WindowTitleHint |
-                            QtCore.Qt.WindowMinimizeButtonHint | 
-                            QtCore.Qt.WindowCloseButtonHint)
-        #? Keep window always on top
-        self.setWindowFlag(QtCore.Qt.WindowStaysOnTopHint, True)
-
+        self.setWindowFlag(Qt.FramelessWindowHint)
+        
         #? Reference to system clipboard
         self.clipboard = QApplication.clipboard()
         self.clipboard.dataChanged.connect(self.on_clipboard_changed)
@@ -149,6 +143,22 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
         self.restore_button.clicked.connect(self.handle_restore_click)
         #? History Button connection for loading all-time history
         self.history_button.clicked.connect(self.load_alltime_history)
+        
+    def eventFilter(self, obj, event):
+        if obj in [self.clearall_button, self.restore_button]:
+            if event.type() == QtCore.QEvent.Enter:
+                if not obj.isEnabled():
+                    QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.ForbiddenCursor)
+                else:
+                    QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.PointingHandCursor)
+            elif event.type() == QtCore.QEvent.Leave:
+                QtWidgets.QApplication.restoreOverrideCursor()
+        return super().eventFilter(obj, event)
+
+
+    def closeEvent(self, event):
+        QtWidgets.QApplication.restoreOverrideCursor()
+        event.accept()
 
     def resource_path(self,relative_path):
         """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -206,7 +216,7 @@ class ClipboardManager(QMainWindow, Ui_MainWindow):
                     border-radius: 20px;
                     font: bold 10pt "MS Shell Dlg 2";
                     color: white;
-                    border: none;
+                    border: 2px solid #E0D9D9;
                 }
                 QPushButton:hover {
                     background-color: rgb(60, 60, 60);

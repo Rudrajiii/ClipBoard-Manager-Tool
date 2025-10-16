@@ -11,25 +11,126 @@ from stylesheets.main_body_style import *
 import os
 import sys
 
+class CustomTitleBar(QtWidgets.QWidget):
+    """Custom title bar for frameless window with dragging capability"""
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.parent_window = parent
+        self.setFixedHeight(35)
+        self.setStyleSheet("""
+            background-color: #000;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        """)
+        
+        # Create layout
+        layout = QtWidgets.QHBoxLayout(self)
+        layout.setContentsMargins(10, 0, 5, 0)
+        # layout.setFont(self.font)
+        layout.setSpacing(0)
+        # layout.
+        
+        # Title label with icon
+        self.title = QtWidgets.QLabel("📋 Clipyy", self)
+        self.title.setStyleSheet("""
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            background: transparent;
+        """)
+        layout.addWidget(self.title)
+        layout.addStretch()
+        
+        # Minimize button
+        self.min_btn = QtWidgets.QPushButton("—", self)
+        self.min_btn.setFixedSize(40, 30)
+        self.min_btn.setStyleSheet("""
+            QPushButton {
+                color: white;
+                background: transparent;
+                border: none;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #333333;
+            }
+        """)
+        self.min_btn.clicked.connect(lambda: parent.showMinimized() if parent else None)
+        layout.addWidget(self.min_btn)
+        
+        # Close button
+        self.close_btn = QtWidgets.QPushButton("✕", self)
+        self.close_btn.setFixedSize(40, 30)
+        self.close_btn.setStyleSheet("""
+            QPushButton {
+                color: white;
+                background: transparent;
+                border: none;
+                font-size: 16px;
+            }
+            QPushButton:hover {
+                background-color: #e81123;
+            }
+        """)
+        self.close_btn.clicked.connect(lambda: parent.close() if parent else None)
+        layout.addWidget(self.close_btn)
+        
+        # For window dragging
+        self._drag_pos = None
+    
+    def mousePressEvent(self, event):
+        """Handle mouse press for window dragging"""
+        if event.button() == QtCore.Qt.LeftButton:
+            self._drag_pos = event.globalPos() - self.parent_window.frameGeometry().topLeft()
+            event.accept()
+    
+    def mouseMoveEvent(self, event):
+        """Handle mouse move for window dragging"""
+        if event.buttons() == QtCore.Qt.LeftButton and self._drag_pos:
+            self.parent_window.move(event.globalPos() - self._drag_pos)
+            event.accept()
+    
+    def mouseReleaseEvent(self, event):
+        """Handle mouse release"""
+        self._drag_pos = None
+        event.accept()
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        # Set frameless window
+        MainWindow.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowSystemMenuHint)
+        MainWindow.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        
         MainWindow.setObjectName("MainWindow")
         # MainWindow.resize(476, 551)
-        MainWindow.resize(476, 552)
+        MainWindow.resize(476, 587)  # Increased to accommodate title bar
         
         # Instead of fixed size, use minimum size
-        MainWindow.setMinimumSize(QtCore.QSize(476, 552))
+        MainWindow.setMinimumSize(QtCore.QSize(476, 587))
         
         # Optional: Set maximum size to same value to mimic fixed size
-        MainWindow.setMaximumSize(QtCore.QSize(476, 552))
+        MainWindow.setMaximumSize(QtCore.QSize(476, 587))
         icon_path = self.resource_path("assets/restore_gif.gif")  # Path to your icon file
         MainWindow.setStyleSheet(MAIN_WINDOW_STYLE)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.header_name = QtWidgets.QLabel(self.centralwidget)
-        self.header_name.setGeometry(QtCore.QRect(10, 10, 141, 41))
+        self.centralwidget.setStyleSheet("""
+            QWidget#centralwidget {
+                background-color: #252525;
+                border-radius: 8px;
+            }
+        """)
+        
+        # Add custom title bar
         font = QtGui.QFont()
         font.setPointSize(12)
+        self.title_bar = CustomTitleBar(MainWindow)
+        self.title_bar.setParent(self.centralwidget)
+        self.title_bar.setGeometry(QtCore.QRect(0, 0, 476, 35))
+        self.title_bar.setFont(font)
+        self.header_name = QtWidgets.QLabel(self.centralwidget)
+        self.header_name.setGeometry(QtCore.QRect(10, 45, 141, 41))  # Moved down to accommodate title bar
         self.header_name.setFont(font)
         self.header_name.setStyleSheet(HEADER_NAME_STYLE)
         self.header_name.setObjectName("header_name")
@@ -37,7 +138,7 @@ class Ui_MainWindow(object):
 
         # Create restore button
         self.restore_button = QtWidgets.QPushButton(self.centralwidget)
-        self.restore_button.setGeometry(QtCore.QRect(230, 12, 40, 40))  # Positioned before history_button
+        self.restore_button.setGeometry(QtCore.QRect(230, 47, 40, 40))  # Moved down by 35px
         self.restore_button.setIcon(QIcon(icon_path))  # Make sure your icon is already white
         self.restore_button.setIconSize(QtCore.QSize(40, 40))
         self.restore_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -51,13 +152,11 @@ class Ui_MainWindow(object):
         self.animation_label.setMovie(self.animation_movie)
         self.animation_label.resize(40, 40)
         self.animation_label.setStyleSheet(ANIMATION_LABEL_STYLE)  # Make it transparent
-        self.animation_label.move(238, 12)  # Same position as restore_button
+        self.animation_label.move(238, 47)  # Moved down by 35px
         self.animation_label.hide()
 
-        
-
         self.clearall_button = QtWidgets.QPushButton(self.centralwidget)
-        self.clearall_button.setGeometry(QtCore.QRect(380, 10, 91, 41))
+        self.clearall_button.setGeometry(QtCore.QRect(380, 45, 91, 41))  # Moved down by 35px
         font = QtGui.QFont()
         font.setPointSize(11)
         self.clearall_button.setFont(font)
@@ -66,7 +165,7 @@ class Ui_MainWindow(object):
 
         self.clearall_button.setObjectName("clearall_button")
         self.history_button = QtWidgets.QPushButton(self.centralwidget)
-        self.history_button.setGeometry(QtCore.QRect(280, 10, 91, 41))
+        self.history_button.setGeometry(QtCore.QRect(280, 45, 91, 41))  # Moved down by 35px
         font = QtGui.QFont()
         font.setPointSize(11)
         self.history_button.setFont(font)
@@ -77,7 +176,7 @@ class Ui_MainWindow(object):
         self.history_button.setObjectName("history_button")
 
         self.line_seperator = QtWidgets.QFrame(self.centralwidget)
-        self.line_seperator.setGeometry(QtCore.QRect(10, 65, 451 , 1))  # Moves it 15px lower, makes it thinner
+        self.line_seperator.setGeometry(QtCore.QRect(10, 100, 451 , 1))  # Moved down by 35px
         self.line_seperator.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_seperator.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_seperator.setObjectName("line_seperator")
@@ -85,7 +184,7 @@ class Ui_MainWindow(object):
 
         # Scroll Area for Dynamic Labels
         self.scroll_area = QtWidgets.QScrollArea(self.centralwidget)
-        self.scroll_area.setGeometry(QtCore.QRect(10, 80, 461, 450))  # Increased height
+        self.scroll_area.setGeometry(QtCore.QRect(10, 115, 461, 450))  # Moved down by 35px
         self.scroll_area.setWidgetResizable(True)
         self.scroll_area.setStyleSheet(SCROLL_AREA_STYLE)
         self.scroll_area.setObjectName("scroll_area")
@@ -135,7 +234,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Clipboard Manager"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Clipyy"))
         self.header_name.setText(_translate("MainWindow", "Clipboard Data"))
         self.clearall_button.setText(_translate("MainWindow", "Clear All"))
         self.history_button.setText(_translate("MainWindow", "History"))

@@ -30,6 +30,6 @@ SCROLL_BAR_STYLE = """
         """
 
 CONTENT_WIDGET_STYLE = """
-background-color: rgb(26, 26, 26);
+background-color: #252525;
 """
 

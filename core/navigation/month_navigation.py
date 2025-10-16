@@ -82,7 +82,7 @@ class MonthNavigator:
             btn.setCursor(QCursor(Qt.PointingHandCursor))
             btn.setStyleSheet(f"""
                 QPushButton {{
-                    background-color: rgb(41, 41, 41);
+                    background-color: #3d3a3a;
                     border-radius: 20px;
                     font: 10pt "MS Shell Dlg 2";
                     color: white;

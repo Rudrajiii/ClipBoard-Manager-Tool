@@ -1,0 +1,648 @@
+2025-06-13 14:26:18,477 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:26:18,477 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:26:20,679 - INFO - Initializing ClipboardManager
+2025-06-13 14:26:28,492 - INFO - Saved to DB: 1.0.9
+pyperclip               ...
+2025-06-13 14:26:28,493 - INFO - Removing placeholder
+2025-06-13 14:26:28,509 - INFO - Adding label to layout
+2025-06-13 14:26:28,511 - INFO - Text already exists in DB for today
+2025-06-13 14:26:31,869 - INFO - btn changed to back....
+2025-06-13 14:26:34,656 - INFO - btn changed to history....
+2025-06-13 14:26:34,662 - INFO - Restoring all items!
+2025-06-13 14:26:34,662 - INFO - Clearing all items!
+2025-06-13 14:26:34,665 - INFO - Removing widget: 
+2025-06-13 14:26:34,667 - INFO - Removing widget: clipboard_container
+2025-06-13 14:26:34,671 - INFO - All items cleared, placeholder restored
+2025-06-13 14:26:34,675 - INFO - Restoring labels to layout
+2025-06-13 14:26:34,677 - INFO - Removing placeholder
+2025-06-13 14:26:36,057 - INFO - Clearing all items!
+2025-06-13 14:26:36,057 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:26:36,065 - INFO - All items cleared, placeholder restored
+2025-06-13 14:26:37,461 - INFO - Restoring all items!
+2025-06-13 14:26:37,463 - INFO - Clearing all items!
+2025-06-13 14:26:37,465 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:26:37,468 - INFO - Restoring labels to layout
+2025-06-13 14:26:37,469 - INFO - Removing placeholder
+2025-06-13 14:26:38,523 - INFO - btn changed to back....
+2025-06-13 14:26:41,109 - INFO - btn changed to history....
+2025-06-13 14:26:41,110 - INFO - Restoring all items!
+2025-06-13 14:26:41,112 - INFO - Clearing all items!
+2025-06-13 14:26:41,113 - INFO - Removing widget: 
+2025-06-13 14:26:41,114 - INFO - Removing widget: clipboard_container
+2025-06-13 14:26:41,119 - INFO - All items cleared, placeholder restored
+2025-06-13 14:26:41,122 - INFO - Restoring labels to layout
+2025-06-13 14:26:41,123 - INFO - Removing placeholder
+2025-06-13 14:26:45,239 - INFO - Restoring all items!
+2025-06-13 14:26:45,239 - INFO - Clearing all items!
+2025-06-13 14:26:45,247 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:26:45,247 - INFO - All items cleared, placeholder restored
+2025-06-13 14:26:45,254 - INFO - Restoring labels to layout
+2025-06-13 14:26:45,256 - INFO - Removing placeholder
+2025-06-13 14:30:10,917 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:30:10,917 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:30:11,569 - INFO - Initializing ClipboardManager
+2025-06-13 14:30:11,614 - INFO - Removing placeholder
+2025-06-13 14:30:11,620 - INFO - Adding label to layout
+2025-06-13 14:30:11,621 - INFO - Text already exists in DB for today
+2025-06-13 14:30:16,717 - INFO - Saved to DB: ad_text_resize import ElidedLa...
+2025-06-13 14:30:16,723 - INFO - Adding label to layout
+2025-06-13 14:30:16,725 - INFO - Text already exists in DB for today
+2025-06-13 14:30:19,537 - INFO - Saved to DB: rogram...
+2025-06-13 14:30:10,...
+2025-06-13 14:30:19,540 - INFO - Adding label to layout
+2025-06-13 14:30:19,546 - INFO - Text already exists in DB for today
+2025-06-13 14:30:28,793 - INFO - btn changed to back....
+2025-06-13 14:30:39,721 - INFO - btn changed to history....
+2025-06-13 14:30:39,727 - INFO - Restoring all items!
+2025-06-13 14:30:39,727 - INFO - Clearing all items!
+2025-06-13 14:30:39,729 - INFO - Removing widget: 
+2025-06-13 14:30:39,730 - INFO - Removing widget: clipboard_container
+2025-06-13 14:30:39,735 - INFO - All items cleared, placeholder restored
+2025-06-13 14:30:39,737 - INFO - Restoring labels to layout
+2025-06-13 14:30:39,738 - INFO - Restoring labels to layout
+2025-06-13 14:30:39,742 - INFO - Restoring labels to layout
+2025-06-13 14:30:39,743 - INFO - Removing placeholder
+2025-06-13 14:30:41,184 - INFO - btn changed to back....
+2025-06-13 14:30:46,647 - INFO - btn changed to history....
+2025-06-13 14:30:46,650 - INFO - Restoring all items!
+2025-06-13 14:30:46,650 - INFO - Clearing all items!
+2025-06-13 14:30:46,650 - INFO - Removing widget: 
+2025-06-13 14:30:46,650 - INFO - All items cleared, placeholder restored
+2025-06-13 14:30:46,658 - INFO - Restoring labels to layout
+2025-06-13 14:30:46,660 - INFO - Restoring labels to layout
+2025-06-13 14:30:46,662 - INFO - Restoring labels to layout
+2025-06-13 14:30:46,663 - INFO - Removing placeholder
+2025-06-13 14:30:47,667 - INFO - btn changed to back....
+2025-06-13 14:30:54,257 - INFO - btn changed to history....
+2025-06-13 14:30:54,257 - INFO - Restoring all items!
+2025-06-13 14:30:54,257 - INFO - Clearing all items!
+2025-06-13 14:30:54,257 - INFO - Removing widget: 
+2025-06-13 14:30:54,267 - INFO - Removing widget: clipboard_container
+2025-06-13 14:30:54,270 - INFO - All items cleared, placeholder restored
+2025-06-13 14:30:54,274 - INFO - Restoring labels to layout
+2025-06-13 14:30:54,276 - INFO - Restoring labels to layout
+2025-06-13 14:30:54,277 - INFO - Restoring labels to layout
+2025-06-13 14:30:54,279 - INFO - Removing placeholder
+2025-06-13 14:31:04,844 - INFO - btn changed to back....
+2025-06-13 14:31:07,567 - INFO - btn changed to history....
+2025-06-13 14:31:07,571 - INFO - Restoring all items!
+2025-06-13 14:31:07,571 - INFO - Clearing all items!
+2025-06-13 14:31:07,571 - INFO - Removing widget: 
+2025-06-13 14:31:07,571 - INFO - Removing widget: clipboard_container
+2025-06-13 14:31:07,580 - INFO - All items cleared, placeholder restored
+2025-06-13 14:31:07,583 - INFO - Restoring labels to layout
+2025-06-13 14:31:07,585 - INFO - Restoring labels to layout
+2025-06-13 14:31:07,588 - INFO - Restoring labels to layout
+2025-06-13 14:31:07,590 - INFO - Removing placeholder
+2025-06-13 14:31:08,788 - INFO - Restoring all items!
+2025-06-13 14:31:08,788 - INFO - Clearing all items!
+2025-06-13 14:31:08,796 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:31:08,797 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:31:08,797 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:31:08,797 - INFO - All items cleared, placeholder restored
+2025-06-13 14:31:08,806 - INFO - Restoring labels to layout
+2025-06-13 14:31:08,809 - INFO - Restoring labels to layout
+2025-06-13 14:31:08,812 - INFO - Restoring labels to layout
+2025-06-13 14:31:08,813 - INFO - Removing placeholder
+2025-06-13 14:31:10,981 - INFO - Clearing all items!
+2025-06-13 14:31:10,987 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:31:10,987 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:31:10,987 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:31:10,987 - INFO - All items cleared, placeholder restored
+2025-06-13 14:31:11,828 - INFO - Restoring all items!
+2025-06-13 14:31:11,833 - INFO - Clearing all items!
+2025-06-13 14:31:11,835 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:31:11,839 - INFO - Restoring labels to layout
+2025-06-13 14:31:11,840 - INFO - Restoring labels to layout
+2025-06-13 14:31:11,843 - INFO - Restoring labels to layout
+2025-06-13 14:31:11,845 - INFO - Removing placeholder
+2025-06-13 14:31:12,839 - INFO - btn changed to back....
+2025-06-13 14:31:15,808 - INFO - btn changed to history....
+2025-06-13 14:31:15,808 - INFO - Restoring all items!
+2025-06-13 14:31:15,808 - INFO - Clearing all items!
+2025-06-13 14:31:15,816 - INFO - Removing widget: 
+2025-06-13 14:31:15,817 - INFO - Removing widget: clipboard_container
+2025-06-13 14:31:15,817 - INFO - All items cleared, placeholder restored
+2025-06-13 14:31:15,824 - INFO - Restoring labels to layout
+2025-06-13 14:31:15,825 - INFO - Restoring labels to layout
+2025-06-13 14:31:15,828 - INFO - Restoring labels to layout
+2025-06-13 14:31:15,829 - INFO - Removing placeholder
+2025-06-13 14:31:17,748 - INFO - btn changed to back....
+2025-06-13 14:31:20,722 - INFO - btn changed to history....
+2025-06-13 14:31:20,727 - INFO - Restoring all items!
+2025-06-13 14:31:20,729 - INFO - Clearing all items!
+2025-06-13 14:31:20,729 - INFO - Removing widget: 
+2025-06-13 14:31:20,729 - INFO - All items cleared, placeholder restored
+2025-06-13 14:31:20,737 - INFO - Restoring labels to layout
+2025-06-13 14:31:20,739 - INFO - Restoring labels to layout
+2025-06-13 14:31:20,741 - INFO - Restoring labels to layout
+2025-06-13 14:31:20,743 - INFO - Removing placeholder
+2025-06-13 14:32:13,673 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:32:13,677 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:32:15,224 - INFO - Initializing ClipboardManager
+2025-06-13 14:32:15,259 - INFO - Removing placeholder
+2025-06-13 14:32:15,298 - INFO - Adding label to layout
+2025-06-13 14:32:15,304 - INFO - Text already exists in DB for today
+2025-06-13 14:32:15,327 - INFO - Adding label to layout
+2025-06-13 14:32:15,331 - INFO - Text already exists in DB for today
+2025-06-13 14:32:15,367 - INFO - Adding label to layout
+2025-06-13 14:32:15,379 - INFO - Text already exists in DB for today
+2025-06-13 14:32:18,159 - INFO - btn changed to back....
+2025-06-13 14:32:20,169 - INFO - btn changed to history....
+2025-06-13 14:32:20,169 - INFO - Restoring all items!
+2025-06-13 14:32:20,169 - INFO - Clearing all items!
+2025-06-13 14:32:20,169 - INFO - Removing widget: 
+2025-06-13 14:32:20,169 - INFO - Removing widget: clipboard_container
+2025-06-13 14:32:20,176 - INFO - All items cleared, placeholder restored
+2025-06-13 14:32:20,180 - INFO - Restoring labels to layout
+2025-06-13 14:32:20,182 - INFO - Restoring labels to layout
+2025-06-13 14:32:20,183 - INFO - Restoring labels to layout
+2025-06-13 14:32:20,184 - INFO - Removing placeholder
+2025-06-13 14:32:21,679 - INFO - btn changed to back....
+2025-06-13 14:32:23,673 - INFO - btn changed to history....
+2025-06-13 14:32:23,677 - INFO - Restoring all items!
+2025-06-13 14:32:23,677 - INFO - Clearing all items!
+2025-06-13 14:32:23,681 - INFO - Removing widget: 
+2025-06-13 14:32:23,682 - INFO - Removing widget: clipboard_container
+2025-06-13 14:32:23,682 - INFO - All items cleared, placeholder restored
+2025-06-13 14:32:23,689 - INFO - Restoring labels to layout
+2025-06-13 14:32:23,691 - INFO - Restoring labels to layout
+2025-06-13 14:32:23,694 - INFO - Restoring labels to layout
+2025-06-13 14:32:23,695 - INFO - Removing placeholder
+2025-06-13 14:32:24,661 - INFO - Clearing all items!
+2025-06-13 14:32:24,662 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:32:24,663 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:32:24,664 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:32:24,666 - INFO - All items cleared, placeholder restored
+2025-06-13 14:32:25,785 - INFO - Restoring all items!
+2025-06-13 14:32:25,786 - INFO - Clearing all items!
+2025-06-13 14:32:25,787 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:32:25,791 - INFO - Restoring labels to layout
+2025-06-13 14:32:25,793 - INFO - Restoring labels to layout
+2025-06-13 14:32:25,796 - INFO - Restoring labels to layout
+2025-06-13 14:32:25,797 - INFO - Removing placeholder
+2025-06-13 14:32:27,393 - INFO - Restoring all items!
+2025-06-13 14:32:27,397 - INFO - Clearing all items!
+2025-06-13 14:32:27,397 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:32:27,397 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:32:27,400 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:32:27,400 - INFO - All items cleared, placeholder restored
+2025-06-13 14:32:27,404 - INFO - Restoring labels to layout
+2025-06-13 14:32:27,405 - INFO - Restoring labels to layout
+2025-06-13 14:32:27,408 - INFO - Restoring labels to layout
+2025-06-13 14:32:27,408 - INFO - Removing placeholder
+2025-06-13 14:32:28,528 - INFO - Clearing all items!
+2025-06-13 14:32:28,528 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:32:28,533 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:32:28,533 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:32:28,535 - INFO - All items cleared, placeholder restored
+2025-06-13 14:32:28,880 - INFO - Clearing all items!
+2025-06-13 14:32:28,880 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:32:29,729 - INFO - btn changed to back....
+2025-06-13 14:32:32,497 - INFO - btn changed to history....
+2025-06-13 14:32:32,497 - INFO - Restoring all items!
+2025-06-13 14:32:32,497 - INFO - Clearing all items!
+2025-06-13 14:32:32,497 - INFO - Removing widget: 
+2025-06-13 14:32:32,507 - INFO - All items cleared, placeholder restored
+2025-06-13 14:32:32,510 - INFO - Restoring labels to layout
+2025-06-13 14:32:32,512 - INFO - Restoring labels to layout
+2025-06-13 14:32:32,514 - INFO - Restoring labels to layout
+2025-06-13 14:32:32,516 - INFO - Removing placeholder
+2025-06-13 14:37:12,071 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:37:12,075 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:37:14,048 - INFO - Initializing ClipboardManager
+2025-06-13 14:37:14,100 - INFO - Removing placeholder
+2025-06-13 14:37:14,113 - INFO - Adding label to layout
+2025-06-13 14:37:14,115 - INFO - Text already exists in DB for today
+2025-06-13 14:37:14,118 - INFO - Adding label to layout
+2025-06-13 14:37:14,120 - INFO - Text already exists in DB for today
+2025-06-13 14:37:14,125 - INFO - Adding label to layout
+2025-06-13 14:37:14,126 - INFO - Text already exists in DB for today
+2025-06-13 14:37:15,849 - INFO - btn changed to back....
+2025-06-13 14:37:20,234 - INFO - btn changed to history....
+2025-06-13 14:37:20,240 - INFO - Restoring all items!
+2025-06-13 14:37:20,242 - INFO - Clearing all items!
+2025-06-13 14:37:20,244 - INFO - Removing widget: 
+2025-06-13 14:37:20,249 - INFO - All items cleared, placeholder restored
+2025-06-13 14:37:20,278 - INFO - Restoring labels to layout
+2025-06-13 14:37:20,282 - INFO - Restoring labels to layout
+2025-06-13 14:37:20,285 - INFO - Restoring labels to layout
+2025-06-13 14:37:20,288 - INFO - Removing placeholder
+2025-06-13 14:37:46,948 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:37:46,949 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:37:47,637 - INFO - Initializing ClipboardManager
+2025-06-13 14:37:47,649 - INFO - Removing placeholder
+2025-06-13 14:37:47,658 - INFO - Adding label to layout
+2025-06-13 14:37:47,662 - INFO - Text already exists in DB for today
+2025-06-13 14:37:47,667 - INFO - Adding label to layout
+2025-06-13 14:37:47,671 - INFO - Text already exists in DB for today
+2025-06-13 14:37:47,687 - INFO - Adding label to layout
+2025-06-13 14:37:47,689 - INFO - Text already exists in DB for today
+2025-06-13 14:37:52,766 - INFO - Saved to DB: -...
+2025-06-13 14:37:52,768 - INFO - Adding label to layout
+2025-06-13 14:37:52,771 - INFO - Text already exists in DB for today
+2025-06-13 14:38:04,668 - INFO - btn changed to back....
+2025-06-13 14:38:06,895 - INFO - btn changed to history....
+2025-06-13 14:38:06,899 - INFO - Restoring all items!
+2025-06-13 14:38:06,900 - INFO - Clearing all items!
+2025-06-13 14:38:06,903 - INFO - Removing widget: 
+2025-06-13 14:38:06,904 - INFO - Removing widget: clipboard_container
+2025-06-13 14:38:06,908 - INFO - All items cleared, placeholder restored
+2025-06-13 14:38:06,911 - INFO - Restoring labels to layout
+2025-06-13 14:38:06,914 - INFO - Restoring labels to layout
+2025-06-13 14:38:06,918 - INFO - Restoring labels to layout
+2025-06-13 14:38:06,922 - INFO - Restoring labels to layout
+2025-06-13 14:38:06,928 - INFO - Removing placeholder
+2025-06-13 14:38:08,056 - INFO - btn changed to back....
+2025-06-13 14:38:18,783 - INFO - btn changed to history....
+2025-06-13 14:38:18,786 - INFO - Restoring all items!
+2025-06-13 14:38:18,788 - INFO - Clearing all items!
+2025-06-13 14:38:18,789 - INFO - Removing widget: 
+2025-06-13 14:38:18,790 - INFO - Removing widget: clipboard_container
+2025-06-13 14:38:18,792 - INFO - All items cleared, placeholder restored
+2025-06-13 14:38:18,793 - INFO - Restoring labels to layout
+2025-06-13 14:38:18,795 - INFO - Restoring labels to layout
+2025-06-13 14:38:18,797 - INFO - Restoring labels to layout
+2025-06-13 14:38:18,798 - INFO - Restoring labels to layout
+2025-06-13 14:38:18,799 - INFO - Removing placeholder
+2025-06-13 14:38:19,906 - INFO - Clearing all items!
+2025-06-13 14:38:19,907 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:19,908 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:19,910 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:19,912 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:19,915 - INFO - All items cleared, placeholder restored
+2025-06-13 14:38:20,681 - INFO - Restoring all items!
+2025-06-13 14:38:20,683 - INFO - Clearing all items!
+2025-06-13 14:38:20,684 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:38:20,687 - INFO - Restoring labels to layout
+2025-06-13 14:38:20,690 - INFO - Restoring labels to layout
+2025-06-13 14:38:20,693 - INFO - Restoring labels to layout
+2025-06-13 14:38:20,696 - INFO - Restoring labels to layout
+2025-06-13 14:38:20,697 - INFO - Removing placeholder
+2025-06-13 14:38:23,070 - INFO - Restoring all items!
+2025-06-13 14:38:23,071 - INFO - Clearing all items!
+2025-06-13 14:38:23,072 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:23,073 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:23,074 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:23,075 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:23,076 - INFO - All items cleared, placeholder restored
+2025-06-13 14:38:23,078 - INFO - Restoring labels to layout
+2025-06-13 14:38:23,081 - INFO - Restoring labels to layout
+2025-06-13 14:38:23,084 - INFO - Restoring labels to layout
+2025-06-13 14:38:23,086 - INFO - Restoring labels to layout
+2025-06-13 14:38:23,088 - INFO - Removing placeholder
+2025-06-13 14:38:25,082 - INFO - Clearing all items!
+2025-06-13 14:38:25,084 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:25,085 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:25,086 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:25,088 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:25,090 - INFO - All items cleared, placeholder restored
+2025-06-13 14:38:26,227 - INFO - Restoring all items!
+2025-06-13 14:38:26,229 - INFO - Clearing all items!
+2025-06-13 14:38:26,232 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:38:26,236 - INFO - Restoring labels to layout
+2025-06-13 14:38:26,239 - INFO - Restoring labels to layout
+2025-06-13 14:38:26,242 - INFO - Restoring labels to layout
+2025-06-13 14:38:26,249 - INFO - Restoring labels to layout
+2025-06-13 14:38:26,250 - INFO - Removing placeholder
+2025-06-13 14:38:26,993 - INFO - btn changed to back....
+2025-06-13 14:38:27,813 - INFO - btn changed to history....
+2025-06-13 14:38:27,815 - INFO - Restoring all items!
+2025-06-13 14:38:27,816 - INFO - Clearing all items!
+2025-06-13 14:38:27,818 - INFO - Removing widget: 
+2025-06-13 14:38:27,822 - INFO - All items cleared, placeholder restored
+2025-06-13 14:38:27,827 - INFO - Restoring labels to layout
+2025-06-13 14:38:27,830 - INFO - Restoring labels to layout
+2025-06-13 14:38:27,833 - INFO - Restoring labels to layout
+2025-06-13 14:38:27,836 - INFO - Restoring labels to layout
+2025-06-13 14:38:27,838 - INFO - Removing placeholder
+2025-06-13 14:38:28,414 - INFO - btn changed to back....
+2025-06-13 14:38:29,687 - INFO - btn changed to history....
+2025-06-13 14:38:29,689 - INFO - Restoring all items!
+2025-06-13 14:38:29,689 - INFO - Clearing all items!
+2025-06-13 14:38:29,690 - INFO - Removing widget: 
+2025-06-13 14:38:29,694 - INFO - All items cleared, placeholder restored
+2025-06-13 14:38:29,697 - INFO - Restoring labels to layout
+2025-06-13 14:38:29,698 - INFO - Restoring labels to layout
+2025-06-13 14:38:29,701 - INFO - Restoring labels to layout
+2025-06-13 14:38:29,704 - INFO - Restoring labels to layout
+2025-06-13 14:38:29,705 - INFO - Removing placeholder
+2025-06-13 14:38:30,654 - INFO - Clearing all items!
+2025-06-13 14:38:30,655 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:30,657 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:30,658 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:30,661 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:38:30,662 - INFO - All items cleared, placeholder restored
+2025-06-13 14:38:31,351 - INFO - Restoring all items!
+2025-06-13 14:38:31,352 - INFO - Clearing all items!
+2025-06-13 14:38:31,352 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:38:31,356 - INFO - Restoring labels to layout
+2025-06-13 14:38:31,359 - INFO - Restoring labels to layout
+2025-06-13 14:38:31,361 - INFO - Restoring labels to layout
+2025-06-13 14:38:31,363 - INFO - Restoring labels to layout
+2025-06-13 14:38:31,364 - INFO - Removing placeholder
+2025-06-13 14:39:03,834 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:39:03,835 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:39:04,415 - INFO - Initializing ClipboardManager
+2025-06-13 14:39:04,431 - INFO - Removing placeholder
+2025-06-13 14:39:04,443 - INFO - Adding label to layout
+2025-06-13 14:39:04,445 - INFO - Text already exists in DB for today
+2025-06-13 14:39:04,454 - INFO - Adding label to layout
+2025-06-13 14:39:04,457 - INFO - Text already exists in DB for today
+2025-06-13 14:39:04,461 - INFO - Adding label to layout
+2025-06-13 14:39:04,465 - INFO - Text already exists in DB for today
+2025-06-13 14:39:04,472 - INFO - Adding label to layout
+2025-06-13 14:39:04,475 - INFO - Text already exists in DB for today
+2025-06-13 14:39:09,041 - INFO - btn changed to back....
+2025-06-13 14:39:11,920 - INFO - btn changed to history....
+2025-06-13 14:39:11,922 - INFO - Restoring all items!
+2025-06-13 14:39:11,924 - INFO - Clearing all items!
+2025-06-13 14:39:11,925 - INFO - Removing widget: 
+2025-06-13 14:39:11,927 - INFO - Removing widget: clipboard_container
+2025-06-13 14:39:11,930 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:11,932 - INFO - Restoring labels to layout
+2025-06-13 14:39:11,935 - INFO - Restoring labels to layout
+2025-06-13 14:39:11,938 - INFO - Restoring labels to layout
+2025-06-13 14:39:11,940 - INFO - Restoring labels to layout
+2025-06-13 14:39:11,942 - INFO - Removing placeholder
+2025-06-13 14:39:13,216 - INFO - btn changed to back....
+2025-06-13 14:39:15,301 - INFO - btn changed to history....
+2025-06-13 14:39:15,302 - INFO - Restoring all items!
+2025-06-13 14:39:15,303 - INFO - Clearing all items!
+2025-06-13 14:39:15,304 - INFO - Removing widget: 
+2025-06-13 14:39:15,307 - INFO - Removing widget: clipboard_container
+2025-06-13 14:39:15,310 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:15,316 - INFO - Restoring labels to layout
+2025-06-13 14:39:15,318 - INFO - Restoring labels to layout
+2025-06-13 14:39:15,320 - INFO - Restoring labels to layout
+2025-06-13 14:39:15,323 - INFO - Restoring labels to layout
+2025-06-13 14:39:15,325 - INFO - Removing placeholder
+2025-06-13 14:39:18,138 - INFO - Restoring all items!
+2025-06-13 14:39:18,138 - INFO - Clearing all items!
+2025-06-13 14:39:18,140 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:18,141 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:18,143 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:18,143 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:18,145 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:18,149 - INFO - Restoring labels to layout
+2025-06-13 14:39:18,152 - INFO - Restoring labels to layout
+2025-06-13 14:39:18,155 - INFO - Restoring labels to layout
+2025-06-13 14:39:18,158 - INFO - Restoring labels to layout
+2025-06-13 14:39:18,161 - INFO - Removing placeholder
+2025-06-13 14:39:19,258 - INFO - Clearing all items!
+2025-06-13 14:39:19,260 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:19,260 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:19,261 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:19,261 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:19,263 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:20,610 - INFO - Restoring all items!
+2025-06-13 14:39:20,611 - INFO - Clearing all items!
+2025-06-13 14:39:20,612 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:39:20,615 - INFO - Restoring labels to layout
+2025-06-13 14:39:20,617 - INFO - Restoring labels to layout
+2025-06-13 14:39:20,620 - INFO - Restoring labels to layout
+2025-06-13 14:39:20,622 - INFO - Restoring labels to layout
+2025-06-13 14:39:20,624 - INFO - Removing placeholder
+2025-06-13 14:39:23,097 - INFO - btn changed to back....
+2025-06-13 14:39:23,678 - INFO - btn changed to history....
+2025-06-13 14:39:23,679 - INFO - Restoring all items!
+2025-06-13 14:39:23,679 - INFO - Clearing all items!
+2025-06-13 14:39:23,680 - INFO - Removing widget: 
+2025-06-13 14:39:23,680 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:23,682 - INFO - Restoring labels to layout
+2025-06-13 14:39:23,683 - INFO - Restoring labels to layout
+2025-06-13 14:39:23,685 - INFO - Restoring labels to layout
+2025-06-13 14:39:23,686 - INFO - Restoring labels to layout
+2025-06-13 14:39:23,687 - INFO - Removing placeholder
+2025-06-13 14:39:24,192 - INFO - btn changed to back....
+2025-06-13 14:39:26,018 - INFO - btn changed to history....
+2025-06-13 14:39:26,019 - INFO - Restoring all items!
+2025-06-13 14:39:26,021 - INFO - Clearing all items!
+2025-06-13 14:39:26,022 - INFO - Removing widget: 
+2025-06-13 14:39:26,025 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:26,029 - INFO - Restoring labels to layout
+2025-06-13 14:39:26,031 - INFO - Restoring labels to layout
+2025-06-13 14:39:26,034 - INFO - Restoring labels to layout
+2025-06-13 14:39:26,036 - INFO - Restoring labels to layout
+2025-06-13 14:39:26,038 - INFO - Removing placeholder
+2025-06-13 14:39:27,140 - INFO - btn changed to back....
+2025-06-13 14:39:28,659 - INFO - btn changed to history....
+2025-06-13 14:39:28,661 - INFO - Restoring all items!
+2025-06-13 14:39:28,662 - INFO - Clearing all items!
+2025-06-13 14:39:28,662 - INFO - Removing widget: 
+2025-06-13 14:39:28,663 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:28,665 - INFO - Restoring labels to layout
+2025-06-13 14:39:28,666 - INFO - Restoring labels to layout
+2025-06-13 14:39:28,668 - INFO - Restoring labels to layout
+2025-06-13 14:39:28,670 - INFO - Restoring labels to layout
+2025-06-13 14:39:28,672 - INFO - Removing placeholder
+2025-06-13 14:39:30,900 - INFO - Restoring all items!
+2025-06-13 14:39:30,901 - INFO - Clearing all items!
+2025-06-13 14:39:30,903 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:30,903 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:30,905 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:30,907 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:30,909 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:30,913 - INFO - Restoring labels to layout
+2025-06-13 14:39:30,915 - INFO - Restoring labels to layout
+2025-06-13 14:39:30,917 - INFO - Restoring labels to layout
+2025-06-13 14:39:30,919 - INFO - Restoring labels to layout
+2025-06-13 14:39:30,921 - INFO - Removing placeholder
+2025-06-13 14:39:32,606 - INFO - Clearing all items!
+2025-06-13 14:39:32,607 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:32,608 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:32,608 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:32,609 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:32,612 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:33,884 - INFO - Restoring all items!
+2025-06-13 14:39:33,885 - INFO - Clearing all items!
+2025-06-13 14:39:33,886 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:39:33,889 - INFO - Restoring labels to layout
+2025-06-13 14:39:33,890 - INFO - Restoring labels to layout
+2025-06-13 14:39:33,893 - INFO - Restoring labels to layout
+2025-06-13 14:39:33,896 - INFO - Restoring labels to layout
+2025-06-13 14:39:33,897 - INFO - Removing placeholder
+2025-06-13 14:39:35,342 - INFO - Restoring all items!
+2025-06-13 14:39:35,343 - INFO - Clearing all items!
+2025-06-13 14:39:35,344 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:35,345 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:35,346 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:35,347 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:35,350 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:35,354 - INFO - Restoring labels to layout
+2025-06-13 14:39:35,355 - INFO - Restoring labels to layout
+2025-06-13 14:39:35,358 - INFO - Restoring labels to layout
+2025-06-13 14:39:35,360 - INFO - Restoring labels to layout
+2025-06-13 14:39:35,362 - INFO - Removing placeholder
+2025-06-13 14:39:37,970 - INFO - Clearing all items!
+2025-06-13 14:39:37,971 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:37,972 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:37,972 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:37,973 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:39:37,975 - INFO - All items cleared, placeholder restored
+2025-06-13 14:39:42,814 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:39:42,814 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:39:43,369 - INFO - Initializing ClipboardManager
+2025-06-13 14:39:43,375 - INFO - Removing placeholder
+2025-06-13 14:39:43,380 - INFO - Adding label to layout
+2025-06-13 14:39:43,381 - INFO - Text already exists in DB for today
+2025-06-13 14:39:43,383 - INFO - Adding label to layout
+2025-06-13 14:39:43,385 - INFO - Text already exists in DB for today
+2025-06-13 14:39:43,389 - INFO - Adding label to layout
+2025-06-13 14:39:43,392 - INFO - Text already exists in DB for today
+2025-06-13 14:39:43,396 - INFO - Adding label to layout
+2025-06-13 14:39:43,400 - INFO - Text already exists in DB for today
+2025-06-13 14:40:04,055 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:40:04,056 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:40:04,435 - INFO - Initializing ClipboardManager
+2025-06-13 14:40:04,443 - INFO - Removing placeholder
+2025-06-13 14:40:04,446 - INFO - Adding label to layout
+2025-06-13 14:40:04,447 - INFO - Text already exists in DB for today
+2025-06-13 14:40:04,450 - INFO - Adding label to layout
+2025-06-13 14:40:04,451 - INFO - Text already exists in DB for today
+2025-06-13 14:40:04,456 - INFO - Adding label to layout
+2025-06-13 14:40:04,457 - INFO - Text already exists in DB for today
+2025-06-13 14:40:04,458 - INFO - Adding label to layout
+2025-06-13 14:40:04,459 - INFO - Text already exists in DB for today
+2025-06-13 14:40:57,151 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:40:57,151 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:40:57,692 - INFO - Initializing ClipboardManager
+2025-06-13 14:40:57,706 - INFO - Removing placeholder
+2025-06-13 14:40:57,713 - INFO - Adding label to layout
+2025-06-13 14:40:57,715 - INFO - Text already exists in DB for today
+2025-06-13 14:40:57,720 - INFO - Adding label to layout
+2025-06-13 14:40:57,721 - INFO - Text already exists in DB for today
+2025-06-13 14:40:57,734 - INFO - Adding label to layout
+2025-06-13 14:40:57,736 - INFO - Text already exists in DB for today
+2025-06-13 14:40:57,742 - INFO - Adding label to layout
+2025-06-13 14:40:57,744 - INFO - Text already exists in DB for today
+2025-06-13 14:41:00,808 - INFO - btn changed to back....
+2025-06-13 14:41:05,050 - INFO - btn changed to history....
+2025-06-13 14:41:05,051 - INFO - Restoring all items!
+2025-06-13 14:41:05,052 - INFO - Clearing all items!
+2025-06-13 14:41:05,053 - INFO - Removing widget: 
+2025-06-13 14:41:05,054 - INFO - Removing widget: clipboard_container
+2025-06-13 14:41:05,055 - INFO - All items cleared, placeholder restored
+2025-06-13 14:41:05,057 - INFO - Restoring labels to layout
+2025-06-13 14:41:05,059 - INFO - Restoring labels to layout
+2025-06-13 14:41:05,061 - INFO - Restoring labels to layout
+2025-06-13 14:41:05,062 - INFO - Restoring labels to layout
+2025-06-13 14:41:05,063 - INFO - Removing placeholder
+2025-06-13 14:41:06,521 - INFO - Clearing all items!
+2025-06-13 14:41:06,522 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:06,522 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:06,523 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:06,526 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:06,527 - INFO - All items cleared, placeholder restored
+2025-06-13 14:41:07,831 - INFO - Restoring all items!
+2025-06-13 14:41:07,832 - INFO - Clearing all items!
+2025-06-13 14:41:07,832 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:41:07,834 - INFO - Restoring labels to layout
+2025-06-13 14:41:07,835 - INFO - Restoring labels to layout
+2025-06-13 14:41:07,838 - INFO - Restoring labels to layout
+2025-06-13 14:41:07,840 - INFO - Restoring labels to layout
+2025-06-13 14:41:07,841 - INFO - Removing placeholder
+2025-06-13 14:41:26,227 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:41:26,228 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:41:26,816 - INFO - Initializing ClipboardManager
+2025-06-13 14:41:26,823 - INFO - Removing placeholder
+2025-06-13 14:41:26,828 - INFO - Adding label to layout
+2025-06-13 14:41:26,829 - INFO - Text already exists in DB for today
+2025-06-13 14:41:26,833 - INFO - Adding label to layout
+2025-06-13 14:41:26,834 - INFO - Text already exists in DB for today
+2025-06-13 14:41:26,843 - INFO - Adding label to layout
+2025-06-13 14:41:26,844 - INFO - Text already exists in DB for today
+2025-06-13 14:41:26,848 - INFO - Adding label to layout
+2025-06-13 14:41:26,852 - INFO - Text already exists in DB for today
+2025-06-13 14:41:37,484 - INFO - Application directory: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool
+2025-06-13 14:41:37,485 - INFO - Log file location: C:\Users\Rudra\OneDrive\Desktop\ClipBoard-Manager-Tool\sys-logs\clipboard-manager-2025-06-13.log
+2025-06-13 14:41:38,146 - INFO - Initializing ClipboardManager
+2025-06-13 14:41:38,161 - INFO - Removing placeholder
+2025-06-13 14:41:38,168 - INFO - Adding label to layout
+2025-06-13 14:41:38,170 - INFO - Text already exists in DB for today
+2025-06-13 14:41:38,176 - INFO - Adding label to layout
+2025-06-13 14:41:38,178 - INFO - Text already exists in DB for today
+2025-06-13 14:41:38,188 - INFO - Adding label to layout
+2025-06-13 14:41:38,191 - INFO - Text already exists in DB for today
+2025-06-13 14:41:38,194 - INFO - Adding label to layout
+2025-06-13 14:41:38,198 - INFO - Text already exists in DB for today
+2025-06-13 14:41:40,127 - INFO - btn changed to back....
+2025-06-13 14:41:43,979 - INFO - btn changed to history....
+2025-06-13 14:41:43,981 - INFO - Restoring all items!
+2025-06-13 14:41:43,982 - INFO - Clearing all items!
+2025-06-13 14:41:43,982 - INFO - Removing widget: 
+2025-06-13 14:41:43,985 - INFO - Removing widget: clipboard_container
+2025-06-13 14:41:43,986 - INFO - All items cleared, placeholder restored
+2025-06-13 14:41:43,989 - INFO - Restoring labels to layout
+2025-06-13 14:41:43,992 - INFO - Restoring labels to layout
+2025-06-13 14:41:43,993 - INFO - Restoring labels to layout
+2025-06-13 14:41:43,996 - INFO - Restoring labels to layout
+2025-06-13 14:41:43,997 - INFO - Removing placeholder
+2025-06-13 14:41:45,513 - INFO - Clearing all items!
+2025-06-13 14:41:45,514 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:45,514 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:45,515 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:45,517 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:45,520 - INFO - All items cleared, placeholder restored
+2025-06-13 14:41:46,490 - INFO - Restoring all items!
+2025-06-13 14:41:46,491 - INFO - Clearing all items!
+2025-06-13 14:41:46,492 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:41:46,495 - INFO - Restoring labels to layout
+2025-06-13 14:41:46,495 - INFO - Restoring labels to layout
+2025-06-13 14:41:46,497 - INFO - Restoring labels to layout
+2025-06-13 14:41:46,500 - INFO - Restoring labels to layout
+2025-06-13 14:41:46,502 - INFO - Removing placeholder
+2025-06-13 14:41:48,295 - INFO - Restoring all items!
+2025-06-13 14:41:48,296 - INFO - Clearing all items!
+2025-06-13 14:41:48,297 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:48,298 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:48,299 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:48,300 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:48,301 - INFO - All items cleared, placeholder restored
+2025-06-13 14:41:48,305 - INFO - Restoring labels to layout
+2025-06-13 14:41:48,307 - INFO - Restoring labels to layout
+2025-06-13 14:41:48,310 - INFO - Restoring labels to layout
+2025-06-13 14:41:48,312 - INFO - Restoring labels to layout
+2025-06-13 14:41:48,314 - INFO - Removing placeholder
+2025-06-13 14:41:50,318 - INFO - Clearing all items!
+2025-06-13 14:41:50,320 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:50,322 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:50,323 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:50,327 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:50,329 - INFO - All items cleared, placeholder restored
+2025-06-13 14:41:50,681 - INFO - Clearing all items!
+2025-06-13 14:41:50,682 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:41:50,847 - INFO - Clearing all items!
+2025-06-13 14:41:50,848 - INFO - No items to clear, placeholder already visible
+2025-06-13 14:41:51,595 - INFO - btn changed to back....
+2025-06-13 14:41:54,603 - INFO - btn changed to history....
+2025-06-13 14:41:54,606 - INFO - Restoring all items!
+2025-06-13 14:41:54,607 - INFO - Clearing all items!
+2025-06-13 14:41:54,609 - INFO - Removing widget: 
+2025-06-13 14:41:54,610 - INFO - Removing widget: clipboard_container
+2025-06-13 14:41:54,612 - INFO - All items cleared, placeholder restored
+2025-06-13 14:41:54,616 - INFO - Restoring labels to layout
+2025-06-13 14:41:54,619 - INFO - Restoring labels to layout
+2025-06-13 14:41:54,623 - INFO - Restoring labels to layout
+2025-06-13 14:41:54,625 - INFO - Restoring labels to layout
+2025-06-13 14:41:54,627 - INFO - Removing placeholder
+2025-06-13 14:41:56,944 - INFO - Restoring all items!
+2025-06-13 14:41:56,946 - INFO - Clearing all items!
+2025-06-13 14:41:56,948 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:56,950 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:56,951 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:56,953 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:56,955 - INFO - All items cleared, placeholder restored
+2025-06-13 14:41:56,959 - INFO - Restoring labels to layout
+2025-06-13 14:41:56,962 - INFO - Restoring labels to layout
+2025-06-13 14:41:56,964 - INFO - Restoring labels to layout
+2025-06-13 14:41:56,966 - INFO - Restoring labels to layout
+2025-06-13 14:41:56,968 - INFO - Removing placeholder
+2025-06-13 14:41:58,398 - INFO - Clearing all items!
+2025-06-13 14:41:58,399 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:58,399 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:58,400 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:58,401 - INFO - Removing widget: dynamic_text_label
+2025-06-13 14:41:58,402 - INFO - All items cleared, placeholder restored
+2025-06-13 14:41:59,710 - INFO - Clearing all items!
+2025-06-13 14:41:59,711 - INFO - No items to clear, placeholder already visible
