@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipy - Clipboard Manager Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Alert Banner -->
+    <div class="alert-banner" id="alertBanner">
+        <div class="alert-content">
+            <p> 🎗️ More features and updates coming soon! Cross-platform support for other OS is in development.</p>
+            <button class="alert-close" onclick="closeAlert()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Top Section: ASCII Art + About Side by Side -->
+    <div class="hero-section">
+        <div class="ascii-container">
+            <pre class="ascii-art">
+   ▄████▄   ██▓     ██▓ ██▓███ ▓██   ██▓
+  ▒██▀ ▀█  ▓██▒    ▓██▒▓██░  ██▒▒██  ██▒
+  ▒▓█    ▄ ▒██░    ▒██▒▓██░ ██▓▒ ▒██ ██░
+  ▒▓▓▄ ▄██▒▒██░    ░██░▒██▄█▓▒ ▒ ░ ▐██▓░
+  ▒ ▓███▀ ░░██████▒░██░▒██▒ ░  ░ ░ ██▒▓░
+  ░ ░▒ ▒  ░░ ▒░▓  ░░▓  ▒▓▒░ ░  ░  ██▒▒▒ 
+    ░  ▒   ░ ░ ▒  ░ ▒ ░░▒ ░     ▓██ ░▒░ 
+  ░          ░ ░    ▒ ░░░       ▒ ▒ ░░  
+  ░ ░          ░  ░ ░           ░ ░     
+  ░                             ░ ░     
+            </pre>
+        </div>
+
+        <div class="about-container">
+            <div class="prompt-line">
+                <span class="prompt">$</span>
+                <span class="command typing-text">cat about.txt</span>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">[ABOUT]</div>
+                <p>A powerful clipboard manager tool for Desktop that keeps track of everything you copy.</p>
+                <p>Never lose your clipboard history again. Clipy stores, organizes in calendar form, and lets you quickly access your clipboard data.</p>
+                
+                <div class="button-group">
+                    <a href="download/clipy.exe" class="btn btn-primary" download>
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                        </svg>
+                        Download for Windows
+                    </a>
+                    <a href="https://github.com/Rudrajiii/ClipBoard-Manager-Tool" target="_blank" class="btn btn-secondary">
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub Repo
+                    </a>
+                </div>
+                
+                <div class="tech-stack-inline">
+                    <span class="tech-label">Built with:</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">PyQt5</span>
+                    <span class="tech-badge">SQLite</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Demo Video Section -->
+        <div class="prompt-line">
+            <span class="prompt">$</span>
+            <span class="command">./watch-demo.sh</span>
+        </div>
+
+        <div class="output-section">
+            <div class="section-header">[DEMO VIDEO]</div>
+            <div class="video-container">
+                <video controls autoplay muted loop>
+                    <source src="video/v1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+            
+
+        <!-- Screenshots Gallery -->
+        <div class="prompt-line">
+            <span class="prompt">$</span>
+            <span class="command">ls screenshots/</span>
+        </div>
+
+        <div class="output-section">
+            <div class="section-header">[SCREENSHOTS]</div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="screenshots/s3.png" alt="Clipy Main Interface">
+                    <p class="gallery-caption">Main Interface</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="screenshots/s1.png" alt="Clipy Search Feature">
+                    <p class="gallery-caption">Calender View Of All Histories</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="screenshots/s2.png" alt="Clipy History View">
+                    <p  class="gallery-caption">History View</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Features Section -->
+        <div class="prompt-line">
+            <span class="prompt">$</span>
+            <span class="command">cat features.txt</span>
+        </div>
+
+        <div class="output-section">
+            <div class="section-header">[FEATURES]</div>
+            <ul class="feature-list">
+                <li><span class="bullet">▸</span> Automatic clipboard history tracking</li>
+                <li><span class="bullet">▸</span> Organized in calendar form</li>
+                <li><span class="bullet">▸</span> Persistent storage with SQLite</li>
+                <li><span class="bullet">▸</span> Clean and intuitive interface</li>
+                <li><span class="bullet">▸</span> Lightweight and fast</li>
+            </ul>
+        </div>
+        <!-- Footer -->
+        <div class="footer-section">
+            <p>Created with 💚 by <span class="author-name">Rudra</span> | © 2025 Clipy</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function closeAlert() {
+            const banner = document.getElementById('alertBanner');
+            banner.style.animation = 'slideUp 0.3s ease';
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
