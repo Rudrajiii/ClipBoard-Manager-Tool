@@ -20,6 +20,31 @@ class MonthNavigator:
         self.next_month_btn = None
         self.calendar_widget = None
 
+    def get_days_with_data(self):
+        """Get a set of days that have clipboard history data for current month/year"""
+        db = get_db_connection()
+        if not db:
+            return set()
+        
+        query = QSqlQuery()
+        query.prepare("""
+            SELECT DISTINCT CAST(strftime('%d', date) AS INTEGER) as day
+            FROM clipboard_items
+            WHERE strftime('%Y', date) = :year
+            AND strftime('%m', date) = :month
+        """)
+        query.bindValue(":year", str(self.current_year))
+        query.bindValue(":month", f"{self.current_month:02d}")
+        
+        days_with_data = set()
+        if query.exec_():
+            while query.next():
+                day = query.value(0)
+                if day:
+                    days_with_data.add(day)
+        
+        return days_with_data
+
     def load_previous_month(self):
         if self.current_month == 1:
             self.current_month = 12
@@ -68,6 +93,9 @@ class MonthNavigator:
         today = date.today()
         max_columns = 7
         row, col = 0, 0
+        
+        # Get days that have clipboard data
+        days_with_data = self.get_days_with_data()
 
         for day in range(1, num_days + 1):
             is_today = (
@@ -75,24 +103,35 @@ class MonthNavigator:
                 self.current_month == today.month and
                 self.current_year == today.year
             )
-            border_style = '2px solid #34D399' if is_today else 'none'
+            has_data = day in days_with_data
+            
+            # Determine styling based on conditions
+            if is_today:
+                border_style = '2px solid #34D399'
+                bg_color = '#4ade80' if has_data else '#3d3a3a'
+            elif has_data:
+                border_style = 'none'
+                bg_color = '#22c55e'
+            else:
+                border_style = 'none'
+                bg_color = '#3d3a3a'
 
             btn = QPushButton(str(day))
             btn.setFixedSize(40, 40)
             btn.setCursor(QCursor(Qt.PointingHandCursor))
             btn.setStyleSheet(f"""
                 QPushButton {{
-                    background-color: #3d3a3a;
+                    background-color: {bg_color};
                     border-radius: 20px;
                     font: 10pt "MS Shell Dlg 2";
                     color: white;
                     border: {border_style};
                 }}
                 QPushButton:hover {{
-                    background-color: rgb(60, 60, 60);
+                    background-color: #16a34a;
                 }}
                 QPushButton:pressed {{
-                    background-color: rgb(80, 80, 80);
+                    background-color: #15803d;
                 }}
             """)
             btn.clicked.connect(lambda checked, d=day: self.load_history_for_date(d))
@@ -132,7 +171,7 @@ class MonthNavigator:
         safe_remove_widget('history_heading')
         safe_remove_widget('calendar_widget')
         
-        self.parent.history_button.setText("Back2")
+        self.parent.history_button.setText("Back")
         self.date_view_active = True
         
         # Create a clean container for the date view
