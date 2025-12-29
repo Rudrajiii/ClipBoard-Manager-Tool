@@ -234,6 +234,16 @@ body {
     padding: 20px;
     border-radius: 4px;
     border: 1px dashed var(--uno-5);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 500px;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border: 2px solid var(--uno-5);
 }
 
 .video-container video {
